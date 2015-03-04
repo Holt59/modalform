@@ -1,0 +1,75 @@
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/ladda-themeless.min.css">
+    </head>
+    <body>
+    
+    <button class="btn btn-default" id="show-form">Show Modal Form</button>
+
+<div id="user-form" class="modal fade" tabindex="-1" role="dialog" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">User</h4>
+            </div>
+            <div class="modal-body">
+                <form action="edit.php" class="form-horizontal" role="form" id="AmicalisteAdminEditForm" method="post" accept-charset="utf-8">
+                    <fieldset>
+                        <input type="hidden" name="id" id="id" />
+                        <div class="form-group required">
+                            <label for="lastname" class="control-label col-md-3">Lastname</label>
+                            <div class="col-md-9">
+                                <input name="lastname" size="30" maxlength="64" class="form-control" type="text" id="lastname" required="required" />
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="firstname" class="control-label col-md-3">Firstname</label>
+                            <div class="col-md-9">
+                                <input name="firstname" size="30" maxlength="64" class="form-control" type="text" id="firstname" required="required" />
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="mail" class="control-label col-md-3">Mail</label>
+                            <div class="col-md-9">
+                                <input name="mail" size="30" class="form-control" type="email" id="mail" required="required" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-9 col-md-offset-3">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="adult" id="adult" />Adult</label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-default">Cancel</button>
+                <button data-submit="modal-form" class="btn btn-default btn-info">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/spin.min.js"></script>
+<script type="text/javascript" src="js/ladda.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-jquery-ladda.min.js"></script>
+<script type="text/javascript" src="js/modalform.min.js"></script>
+
+<script type="text/javascript">
+    $('#user-form').modalform({});
+    $('#show-form').on('click', function () {
+        $('#user-form').modalform('show');
+    });
+</script>
+
+</body>
+
+</html>
